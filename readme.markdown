@@ -21,7 +21,7 @@ npm install angular-dragula --save
 Or bower, too.
 
 ```shell
-bower install angular-dragula --save
+bower install angular-dragula.js --save
 ```
 
 # Usage
