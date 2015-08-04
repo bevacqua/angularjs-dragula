@@ -1,6 +1,6 @@
 {
   "name": "angular-dragula.js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Drag and drop so simple it hurts",
   "main": [
     "dist/angular-dragula.js",
