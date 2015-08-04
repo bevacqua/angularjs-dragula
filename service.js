@@ -25,7 +25,7 @@ function dragulaService () {
       throw new Error('Bag named: "' + name + '" already exists in same angular scope.');
     }
     var ctx = getOrCreateCtx(scope);
-    var bag = {
+    bag = {
       name: name,
       drake: drake
     };
@@ -40,7 +40,7 @@ function dragulaService () {
       }
     }
   }
-  function remove () {
+  function remove (scope, name) {
     var bags = getOrCreateCtx(scope).bags;
     var bag = find(scope, name);
     var i = bags.indexOf(bag);
