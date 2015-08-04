@@ -8,7 +8,7 @@ function dragulaService () {
     add: add,
     find: find,
     options: setOptions,
-    remove: remove
+    destroy: destroy
   };
   function getOrCreateCtx (scope) {
     var ctx = scope[dragulaKey];
@@ -40,11 +40,12 @@ function dragulaService () {
       }
     }
   }
-  function remove (scope, name) {
+  function destroy (scope, name) {
     var bags = getOrCreateCtx(scope).bags;
     var bag = find(scope, name);
     var i = bags.indexOf(bag);
     bags.splice(i, 1);
+    bag.drake.destroy();
   }
   function setOptions (scope, name, options) {
     add(scope, name, dragula(options));

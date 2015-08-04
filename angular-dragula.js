@@ -28,14 +28,8 @@ function register (angular) {
       var drake = dragula({
         containers: [container]
       });
-      var destroyDrake = drake.destroy;
-      drake.destroy = destroy;
       bag = dragulaService.add(scope, name, drake);
       replicateEvents(angular, bag, scope);
-      function destroy () {
-        dragulaService.remove(scope, name);
-        destroyDrake.call(drake);
-      }
     }
   }
 }
