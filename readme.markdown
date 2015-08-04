@@ -18,7 +18,7 @@ You can get it on npm.
 npm install angular-dragula --save
 ```
 
-Or bower, too.
+Or bower, too. <sub>_(note that it's called `angular-dragula.js` in bower)_</sub>
 
 ```shell
 bower install angular-dragula.js --save
