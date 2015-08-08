@@ -54,12 +54,8 @@ app.controller('MuchExampleCtrl', ['$scope', 'dragulaService',
   }
 ]);
 
-app.controller('WowExampleCtrl', ['$scope', '$timeout', 'dragulaService',
-  function ($scope, $timeout, dragulaService) {
-    dragulaService.options($scope, 'seventh-bag', {
-      delay: 200
-    });
-
+app.controller('WowExampleCtrl', ['$scope', '$timeout',
+  function ($scope, $timeout) {
     $scope.onclick = onclick;
 
     function onclick () {
