@@ -2,6 +2,7 @@
 
 var dragula = require('dragula');
 var dragulaKey = '$$dragula';
+var replicateEvents = require('./replicate-events');
 
 function dragulaService () {
   return {
@@ -19,7 +20,7 @@ function dragulaService () {
     }
     return ctx;
   }
-  function add (scope, name, drake) {
+  function add (scope, name, drake, angular) {
     var bag = find(scope, name);
     if (bag) {
       throw new Error('Bag named: "' + name + '" already exists in same angular scope.');
@@ -30,6 +31,7 @@ function dragulaService () {
       drake: drake
     };
     ctx.bags.push(bag);
+    replicateEvents(angular, bag, scope);
     return bag;
   }
   function find (scope, name) {
@@ -47,8 +49,8 @@ function dragulaService () {
     bags.splice(i, 1);
     bag.drake.destroy();
   }
-  function setOptions (scope, name, options) {
-    add(scope, name, dragula(options));
+  function setOptions (scope, name, options, angular) {
+    add(scope, name, dragula(options), angular);
   }
 }
 
