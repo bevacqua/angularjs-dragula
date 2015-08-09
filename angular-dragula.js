@@ -28,8 +28,7 @@ function register (angular) {
       var drake = dragula({
         containers: [container]
       });
-      bag = dragulaService.add(scope, name, drake);
-      replicateEvents(angular, bag, scope);
+      bag = dragulaService.add(scope, name, drake, angular);
     }
   }
 }
