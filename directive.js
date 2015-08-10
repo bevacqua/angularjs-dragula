@@ -2,6 +2,7 @@
 
 var dragula = require('dragula');
 
+/*jshint unused: false*/
 function register (angular) {
   return ['dragulaService', function angularDragula (dragulaService) {
     return {
