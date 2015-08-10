@@ -49,6 +49,13 @@ There's a `dragula` directive _[(as seen in the demo)][2]_ that allows you to gr
 <div dragula='"bag-two"'></div>
 ```
 
+Ng-repeat creates a new isolate scope, which can sometimes cause issues with dragging between a bag with multiple containers. To avoid this you can pass in the scope you want the bag to be stored on (and fire events on) by setting the `dragula-scope` directive on the bag element.
+```html
+<ul ng-controller="ItemsController">
+  <li ng-repeat="item in items" dragula='"bag-one"' dragula-scope='$parent'></li>
+</ul>
+```
+
 If you need to configure the `drake` _(there's only one `drake` per `bag`)_, you'll have to use the `dragulaService`.
 
 ```js
