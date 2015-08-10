@@ -1,3 +1,10 @@
+> Whenever `dragula` itself is updated, a new minor will be published, but the changelog won't be modified
+
+# 1.0.5 Cruel Intentions
+
+- Fixed a bug where event propagation on `$scope` wouldn't be enabled if the `dragulaService` was used directly
+- Bumped `dragula@3.0.2`
+
 # 1.0.2 Bumpy Road
 
 - Bumped `dragula@3.0.0`

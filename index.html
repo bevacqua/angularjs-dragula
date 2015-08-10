@@ -240,6 +240,15 @@ app.controller('RepeatCtrl', ['$scope',
       </code>
     </pre>
   </div>
+
+  <div class='parent' ng-controller='NestedRepeatCtrl'>
+    <label for='hy'><strong>Angular-specific example.</strong> Fancy some nested <code>ng-repeat</code>?</label>
+    <div class='wrapper'>
+      <div class='container' ng-repeat="group in groups" dragula="'nested-bag'" dragula-scope="$parent">
+        <div ng-repeat='item in group.items' ng-bind='item.name'></div>
+      </div>
+    </div>
+  </div>
 </div>
 <h3>Get it on GitHub! <a href='https://github.com/bevacqua/angular-dragula'>bevacqua/angular-dragula</a></h3>
 <script src='dist/angular.js'></script>
