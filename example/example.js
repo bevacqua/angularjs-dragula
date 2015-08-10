@@ -72,3 +72,22 @@ app.controller('RepeatCtrl', ['$scope',
     $scope.many = ['The', 'possibilities', 'are', 'endless!'];
   }
 ]);
+
+app.controller('NestedRepeatCtrl', ['$scope',
+  function ($scope) {
+    $scope.groups = [
+      {
+        name: 'Group A',
+        items: [{name: 'Item A'},{name: 'Item B'},{name: 'Item C'},{name: 'Item D'}]
+      },
+      {
+        name: 'Group B',
+        items: [{name: 'Item 1'},{name: 'Item 2'},{name: 'Item 3'},{name: 'Item 4'}]
+      }
+    ];
+
+    $scope.$on('nested-bag.drop', function(e, el, container, source) {
+      console.log(container.scope());
+    });
+  }
+])
