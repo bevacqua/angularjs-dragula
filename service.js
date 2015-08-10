@@ -2,6 +2,7 @@
 
 var dragula = require('dragula');
 var dragulaKey = '$$dragula';
+var replicateEvents = require('./replicate-events');
 
 function register(angular) {
   return function dragulaService () {
