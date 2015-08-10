@@ -8,7 +8,7 @@ function register (angular) {
   var app = angular.module('dragula', ['ng']);
 
   app.factory('dragulaService', dragulaService(angular));
-  app.directive('dragula', ['dragulaService', dragulaDirective(angular)]);
+  app.directive('dragula', dragulaDirective(angular));
 
   return 'dragula';
 }

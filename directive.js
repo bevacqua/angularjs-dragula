@@ -2,8 +2,8 @@
 
 var dragula = require('dragula');
 
-function register(angular) {
-	return function angularDragula (dragulaService) {
+function register (angular) {
+	return ['dragulaService', function angularDragula (dragulaService) {
     return {
       restrict: 'A',
       link: link,
@@ -25,7 +25,7 @@ function register(angular) {
       });
       bag = dragulaService.add(dragulaScope, name, drake);
     }
-  }
+  }];
 }
 
 module.exports = register;
