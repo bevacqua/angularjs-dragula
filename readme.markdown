@@ -59,6 +59,16 @@ There's a `dragula` directive _[(as seen in the demo)][2]_ that allows you to gr
 </ul>
 ```
 
+### `dragula-model`
+
+If your `ng-repeat` is compiled from array, you may wish to have it synced. For that purpose you need to provide model by setting the `dragula-model` attribute on the bag element
+
+```html
+<ul ng-controller="ItemsController">
+  <li ng-repeat="item in items" dragula='"bag-one"' dragula-model='items'></li>
+</ul>
+```
+
 ### `drake` options
 
 If you need to configure the `drake` _(there's only one `drake` per `bag`)_, you'll have to use the `dragulaService`.

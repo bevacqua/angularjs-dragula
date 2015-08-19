@@ -21,6 +21,9 @@ function register (angular) {
       }
       return ctx;
     }
+    function domIndexOf(child, parent) {
+      return Array.prototype.indexOf.call(angular.element(parent).children(), child);
+    }
     function add (scope, name, drake) {
       var bag = find(scope, name);
       if (bag) {
@@ -33,6 +36,37 @@ function register (angular) {
       };
       ctx.bags.push(bag);
       replicateEvents(angular, bag, scope);
+      if(drake.models){ // models to sync with (must have same structure as containers)
+        var dragElm;
+        var dragIndex;
+        var dropIndex;
+        drake.on('remove',function removeModel () {
+          console.log('removeModel', arguments);
+        });
+        drake.on('drag',function dragModel (el, source) {
+          dragElm = el;
+          dragIndex = domIndexOf(el, source);
+        });
+        drake.on('drop',function dropModel (dropElm, target, source) {
+          dropIndex = domIndexOf(dropElm, target);
+          scope.$applyAsync(function applyDrop() {
+            var sourceModel = drake.models[drake.containers.indexOf(source)];
+            if (target === source) {
+              sourceModel.splice(dropIndex, 0, sourceModel.splice(dragIndex, 1)[0]);
+            } else {
+              var notCopy = dragElm === dropElm;
+              var targetModel = drake.models[drake.containers.indexOf(target)];
+              var dropElmModel = notCopy ? sourceModel[dragIndex] : angular.copy(sourceModel[dragIndex]);
+              
+              if (notCopy) {
+                sourceModel.splice(dragIndex, 1);
+              }
+              targetModel.splice(dropIndex, 0, dropElmModel);
+              target.removeChild(dropElm); // element must be removed for ngRepeat to apply correctly
+            }
+          });
+        });
+      }
       return bag;
     }
     function find (scope, name) {
