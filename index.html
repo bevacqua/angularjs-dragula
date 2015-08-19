@@ -220,10 +220,16 @@ app.controller('WowExampleCtrl', ['$scope', '$timeout',
   <div class='parent' ng-controller='RepeatCtrl'>
     <label for='hy'><strong>Angular-specific example.</strong> Fancy some <code>ng-repeat</code>?</label>
     <div class='wrapper'>
-      <div class='container' dragula='"another-bag"'>
+      <div class='container' dragula='"another-bag"' dragula-model='many'>
         <div ng-repeat='text in many' ng-bind='text'></div>
       </div>
-      <div class='container' dragula='"another-bag"'></div>
+      <div class='container' dragula='"another-bag"' dragula-model='many2'>
+        <div ng-repeat='text in many2' ng-bind='text'></div>        
+      </div>
+    </div>
+    <div class='wrapper'>
+      <div class='container'><pre>{{many | json}}</pre></div>
+      <div class='container'><pre>{{many2 | json}}</pre></div>
     </div>
     <pre>
       <code>

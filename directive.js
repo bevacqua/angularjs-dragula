@@ -8,7 +8,8 @@ function register (angular) {
     return {
       restrict: 'A',
       scope: {
-        dragulaScope: '='
+        dragulaScope: '=',
+        dragulaModel: '=',
       },
       link: link
     };
@@ -17,13 +18,21 @@ function register (angular) {
       var dragulaScope = scope.dragulaScope || scope.$parent;
       var container = elem[0];
       var name = scope.$eval(attrs.dragula);
+      var model = scope.dragulaModel;
       var bag = dragulaService.find(dragulaScope, name);
       if (bag) {
-        bag.drake.containers.push(container); return;
+        bag.drake.containers.push(container);
+        if(bag.drake.models && model){
+          bag.drake.models.push(model);
+        }
+        return;
       }
       var drake = dragula({
         containers: [container]
       });
+      if(model){
+        drake.models = [model];
+      }
       dragulaService.add(dragulaScope, name, drake);
     }
   }];
