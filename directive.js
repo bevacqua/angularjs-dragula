@@ -22,8 +22,12 @@ function register (angular) {
       var bag = dragulaService.find(dragulaScope, name);
       if (bag) {
         bag.drake.containers.push(container);
-        if(bag.drake.models && model){
-          bag.drake.models.push(model);
+        if(model){
+          if(bag.drake.models){
+            bag.drake.models.push(model);
+          }else{
+            bag.drake.models = [model];
+          }
         }
         return;
       }
