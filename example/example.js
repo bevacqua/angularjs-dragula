@@ -67,8 +67,8 @@ app.controller('WowExampleCtrl', ['$scope', '$timeout',
   }
 ]);
 
-app.controller('RepeatCtrl', ['$scope', 'dragulaService',
-  function ($scope, dragulaService) {
+app.controller('RepeatCtrl', ['$scope',
+  function ($scope) {
     $scope.many = ['The', 'possibilities', 'are', 'endless!'];
     $scope.many2 = ['Explore', 'them'];
   }
