@@ -233,14 +233,19 @@ app.controller('WowExampleCtrl', ['$scope', '$timeout',
     </div>
     <pre>
       <code>
-&lt;div class=&#039;container&#039; dragula=&#039;&quot;another-bag&quot;&#039;&gt;
-  &lt;div ng-repeat=&#039;text in many&#039; ng-bind=&#039;text&#039;&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#039;container&#039; dragula=&#039;&quot;another-bag&quot;&#039;&gt;&lt;/div&gt;
+&lt;div class='wrapper'&gt;
+      &lt;div class='container' dragula='&quot;another-bag&quot;' dragula-model='many'&gt;
+        &lt;div ng-repeat='text in many' ng-bind='text'&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class='container' dragula='&quot;another-bag&quot;' dragula-model='many2'&gt;
+        &lt;div ng-repeat='text in many2' ng-bind='text'&gt;&lt;/div&gt;        
+      &lt;/div&gt;
+    &lt;/div&gt;
 
-app.controller('RepeatCtrl', ['$scope',
-  function ($scope) {
+app.controller('RepeatCtrl', ['$scope', 'dragulaService',
+  function ($scope, dragulaService) {
     $scope.many = ['The', 'possibilities', 'are', 'endless!'];
+    $scope.many2 = ['Explore', 'them'];
   }
 ]);
       </code>
