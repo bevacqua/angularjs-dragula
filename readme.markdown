@@ -18,10 +18,10 @@ You can get it on npm.
 npm install angular-dragula --save
 ```
 
-Or bower, too. <sub>_(note that it's called `angular-dragula.js` in bower)_</sub>
+Or bower, too.
 
 ```shell
-bower install angular-dragula.js --save
+bower install angular-dragula --save
 ```
 
 # Setup
