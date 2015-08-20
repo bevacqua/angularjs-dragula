@@ -1,5 +1,9 @@
 > Whenever `dragula` itself is updated, a new minor will be published, but the changelog won't be modified
 
+# 1.0.7 Bow Down
+
+- Renamed package on Bower as `angular-dragula`
+
 # 1.0.5 Cruel Intentions
 
 - Fixed a bug where event propagation on `$scope` wouldn't be enabled if the `dragulaService` was used directly
