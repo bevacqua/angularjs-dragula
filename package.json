@@ -26,7 +26,7 @@
   "homepage": "https://github.com/bevacqua/angular-dragula",
   "dependencies": {
     "atoa": "1.0.0",
-    "dragula": "3.0.6"
+    "dragula": "3.0.7"
   },
   "devDependencies": {
     "angular": "1.4.3",
