@@ -21,6 +21,7 @@ function register (angular) {
         sourceModel = drake.models[drake.containers.indexOf(source)];
         scope.$applyAsync(function applyRemove() {
           sourceModel.splice(dragIndex, 1);
+          drake.emit('remove-model', el, source);
         });
       });
       drake.on('drag',function dragModel (el, source) {
@@ -37,13 +38,14 @@ function register (angular) {
             var notCopy = dragElm === dropElm;
             var targetModel = drake.models[drake.containers.indexOf(target)];
             var dropElmModel = notCopy ? sourceModel[dragIndex] : angular.copy(sourceModel[dragIndex]);
-            
+
             if (notCopy) {
               sourceModel.splice(dragIndex, 1);
             }
             targetModel.splice(dropIndex, 0, dropElmModel);
             target.removeChild(dropElm); // element must be removed for ngRepeat to apply correctly
           }
+          drake.emit('drop-model', dropElm, target, source);
         });
       });
     }
