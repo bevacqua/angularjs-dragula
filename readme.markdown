@@ -69,6 +69,8 @@ If your `ng-repeat` is compiled from array, you may wish to have it synced. For 
 </ul>
 ```
 
+The standard `drop` event is fired before the model is synced. For that purpose you need to use the `drop-model`. The same behavior exists in the `remove` event. Therefore is the `remove-model` event. Further details are available under `Events`
+
 ### `drake` options
 
 If you need to configure the `drake` _(there's only one `drake` per `bag`)_, you'll have to use the `dragulaService`.
@@ -104,6 +106,13 @@ app.controller('ExampleCtrl', ['$scope', function ($scope) {
 ```
 
 Note that these derived events don't expose the DOM elements directly. The elements get wrapped in `angular.element` calls.
+
+## Special Events for angular-dragula
+
+| Event Name |      Listener Arguments      |  Event Description |
+| :-------------: |:-------------:| -----|
+| drop-model | el, target, source | same as normal drop, but model was synced, just available with the use of dragula-model |
+| remove-model | el, container | same as normal remove, but model was synced, just available with the use of dragula-model |
 
 ## `dragulaService`
 

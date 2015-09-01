@@ -10,7 +10,9 @@ var events = [
   'out',
   'over',
   'remove',
-  'shadow'
+  'shadow',
+  'drop-model',
+  'remove-model'
 ];
 
 function replicateEvents (angular, bag, scope) {
