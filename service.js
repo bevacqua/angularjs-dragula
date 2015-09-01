@@ -95,7 +95,9 @@ function register (angular) {
     }
     function setOptions (scope, name, options) {
       var bag = add(scope, name, dragula(options));
-      handleModels(scope, bag.drake);
+      if(bag.drake.models){
+        handleModels(scope, bag.drake);
+      }
     }
   }];
 }
