@@ -38,7 +38,7 @@ function register (angular) {
             drake.models = [model];
           }
         }
-      } );
+      });
     }
   }];
 }
