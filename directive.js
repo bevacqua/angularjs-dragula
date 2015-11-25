@@ -30,12 +30,13 @@ function register (angular) {
         dragulaService.add(dragulaScope, name, drake);
       }
 
-      scope.$watch('dragulaModel', function(model) {
-        if(model){
+      scope.$watch('dragulaModel', function(newValue, oldValue) {
+        if(newValue){
           if(drake.models){
-            drake.models.push(model);
+            var modelIndex = drake.models.indexOf(oldValue);
+            drake.models.splice(modelIndex, 1, newValue);
           }else{
-            drake.models = [model];
+            drake.models = [newValue];
           }
         }
       });
