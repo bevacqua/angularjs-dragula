@@ -18,13 +18,14 @@ function register (angular) {
       var dragulaScope = scope.dragulaScope || scope.$parent;
       var container = elem[0];
       var name = scope.$eval(attrs.dragula);
+      var drake;
 
       var bag = dragulaService.find(dragulaScope, name);
       if (bag) {
-        var drake = bag.drake;
+        drake = bag.drake;
         drake.containers.push(container);
       } else {
-        var drake = dragula({
+        drake = dragula({
           containers: [container]
         });
         dragulaService.add(dragulaScope, name, drake);
