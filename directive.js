@@ -31,14 +31,20 @@ function register (angular) {
         dragulaService.add(dragulaScope, name, drake);
       }
 
-      scope.$watch('dragulaModel', function(newValue, oldValue) {
-        if(newValue){
-          if(drake.models){
-            var modelIndex = drake.models.indexOf(oldValue);
+      scope.$watch('dragulaModel', function (newValue, oldValue) {
+        if (!newValue || newValue === oldValue) {
+          return;
+        }
+
+        if (drake.models) {
+          var modelIndex = oldValue ? drake.models.indexOf(oldValue) : -1;
+          if (modelIndex >= 0) {
             drake.models.splice(modelIndex, 1, newValue);
-          }else{
-            drake.models = [newValue];
+          } else {
+            drake.models.push(newValue);
           }
+        } else {
+          drake.models = [newValue];
         }
       });
     }
