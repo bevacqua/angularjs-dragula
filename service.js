@@ -10,7 +10,8 @@ function register (angular) {
       add: add,
       find: find,
       options: setOptions,
-      destroy: destroy
+      destroy: destroy,
+      handleModels: handleModels
     };
     function handleModels(scope, drake){
       var dragElm;

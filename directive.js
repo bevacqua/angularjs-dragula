@@ -46,6 +46,8 @@ function register (angular) {
         } else {
           drake.models = [newValue];
         }
+
+        dragulaService.handleModels(dragulaScope, drake);
       });
     }
   }];
