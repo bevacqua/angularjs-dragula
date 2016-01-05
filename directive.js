@@ -32,7 +32,7 @@ function register (angular) {
       }
 
       scope.$watch('dragulaModel', function (newValue, oldValue) {
-        if (!newValue || newValue === oldValue) {
+        if (!newValue) {
           return;
         }
 
