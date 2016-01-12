@@ -14,6 +14,9 @@ function register (angular) {
       handleModels: handleModels
     };
     function handleModels(scope, drake){
+      if(drake.registered){ // do not register events twice
+        return;
+      }
       var dragElm;
       var dragIndex;
       var dropIndex;
@@ -55,6 +58,7 @@ function register (angular) {
           drake.emit('drop-model', dropElm, target, source);
         });
       });
+      drake.registered = true;
     }
     function getOrCreateCtx (scope) {
       var ctx = scope[dragulaKey];
