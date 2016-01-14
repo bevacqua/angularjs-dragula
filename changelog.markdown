@@ -1,5 +1,9 @@
 > Whenever `dragula` itself is updated, a new minor will be published, but the changelog won't be modified
 
+# 1.2.2 Body of Lies
+
+- fixes #47
+
 # 1.2.1 The Postman Always Rings Twice
 
 - fixes #45
