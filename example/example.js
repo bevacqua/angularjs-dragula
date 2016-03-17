@@ -48,7 +48,7 @@ app.controller('MuchExampleCtrl', ['$scope', 'dragulaService',
   function ($scope, dragulaService) {
     dragulaService.options($scope, 'sixth-bag', {
       moves: function (el, container, handle) {
-        return handle.className === 'handle';
+        return handle.classList.contains('handle');
       }
     });
   }
