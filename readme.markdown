@@ -69,7 +69,7 @@ If your `ng-repeat` is compiled from array, you may wish to have it synced. For 
 </ul>
 ```
 
-The standard `drop` event is fired before the model is synced. For that purpose you need to use the `drop-model`. The same behavior exists in the `remove` event. Therefore is the `remove-model` event. Further details are available under `Events`
+The standard `drop` event is fired before the model is synced. For that purpose you need to use the event `drop-model`. The same behavior exists in the `remove` event. Therefore is the `remove-model` event. Further details are available under `Events`
 
 ### `drake` options
 
