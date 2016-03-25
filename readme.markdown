@@ -54,8 +54,8 @@ There's a `dragula` directive _[(as seen in the demo)][2]_ that allows you to gr
 `ng-repeat` creates a new isolate scope, which can sometimes cause issues with dragging between a bag with multiple containers. To avoid this you can pass in the scope you want the bag to be stored on _(and fire events on)_ by setting the `dragula-scope` directive on the bag element.
 
 ```html
-<ul ng-controller='ItemsController'>
-  <li ng-repeat="item in items" dragula='"bag-one"' dragula-scope='$parent'></li>
+<ul ng-controller="ItemsController">
+  <li ng-repeat="item in items" dragula='"bag-one"' dragula-scope="$parent"></li>
 </ul>
 ```
 
@@ -64,8 +64,8 @@ There's a `dragula` directive _[(as seen in the demo)][2]_ that allows you to gr
 If your `ng-repeat` is compiled from array, you may wish to have it synced. For that purpose you need to provide model by setting the `dragula-model` attribute on the bag element
 
 ```html
-<ul ng-controller='ItemsController'>
-  <li ng-repeat="item in items" dragula='"bag-one"' dragula-model='items'></li>
+<ul ng-controller="ItemsController">
+  <li ng-repeat="item in items" dragula='"bag-one"' dragula-model="items"></li>
 </ul>
 ```
 
