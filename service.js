@@ -36,6 +36,9 @@ function register (angular) {
         dragIndex = domIndexOf(el, source);
       });
       drake.on('drop',function dropModel (dropElm, target, source) {
+        if (target === null) {
+          return;
+        }
         if (!drake.models) {
           return;
         }
