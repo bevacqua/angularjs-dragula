@@ -1,6 +1,6 @@
 {
   "name": "angular-dragula",
-  "version": "1.2.6",
+  "version": "1.2.8",
   "description": "Drag and drop so simple it hurts",
   "main": "angular-dragula.js",
   "scripts": {
@@ -26,7 +26,7 @@
   "homepage": "https://github.com/bevacqua/angular-dragula",
   "dependencies": {
     "atoa": "1.0.0",
-    "dragula": "3.6.8"
+    "dragula": "3.7.2"
   },
   "devDependencies": {
     "angular": "1.4.3",
