@@ -15,22 +15,22 @@ Try out the [demo][2]!
 You can get it on npm.
 
 ```shell
-npm install angular-dragula --save
+npm install angularjs-dragula --save
 ```
 
 Or bower, too.
 
 ```shell
-bower install angular-dragula --save
+bower install angularjs-dragula --save
 ```
 
 # Setup
 
-You'll need to pass in `angularDragula` to your module when booting up your application. `angular-dragula` takes your `angular` instance and uses it to register its own module, service, and directive.
+You'll need to pass in `angularDragula` to your module when booting up your application. `angularjs-dragula` takes your `angular` instance and uses it to register its own module, service, and directive.
 
 ```js
 var angular = require('angular');
-var angularDragula = require('angular-dragula');
+var angularDragula = require('angularjs-dragula');
 
 var app = angular.module('my-app', [angularDragula(angular)]);
 ```
@@ -107,7 +107,7 @@ app.controller('ExampleCtrl', ['$scope', function ($scope) {
 
 Note that these derived events don't expose the DOM elements directly. The elements get wrapped in `angular.element` calls.
 
-## Special Events for angular-dragula
+## Special Events for angularjs-dragula
 
 | Event Name |      Listener Arguments      |  Event Description |
 | :-------------: |:-------------:| -----|
@@ -141,7 +141,7 @@ Destroys a `drake` instance named `name` scoped under `scope`.
 
 MIT
 
-[1]: https://github.com/bevacqua/angular-dragula/blob/master/resources/demo.png
-[2]: http://bevacqua.github.io/angular-dragula/
-[3]: https://github.com/bevacqua/angular-dragula/blob/master/resources/logo.png
+[1]: https://github.com/bevacqua/angularjs-dragula/blob/master/resources/demo.png
+[2]: http://bevacqua.github.io/angularjs-dragula/
+[3]: https://github.com/bevacqua/angularjs-dragula/blob/master/resources/logo.png
 [4]: https://github.com/bevacqua/dragula

@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('angular-dragula-example', [angularDragula(angular)]);
+var app = angular.module('angularjs-dragula-example', [angularDragula(angular)]);
 
 app.controller('ExampleCtrl', ['$scope', function ($scope) {
   $scope.$on('second-bag.drag', function (e, el) {

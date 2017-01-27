@@ -56,5 +56,5 @@ To run tests a single time, simply run the following command. This is used in CI
 npm test
 ```
 
-[1]: https://github.com/bevacqua/angular-dragula/issues?q=label%3Asupport
+[1]: https://github.com/bevacqua/angularjs-dragula/issues?q=label%3Asupport
 [2]: http://bevacqua.github.io/dragula/
