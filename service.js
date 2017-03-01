@@ -55,7 +55,7 @@ function register (angular) {
             targetModel.splice(dropIndex, 0, dropElmModel);
             target.removeChild(dropElm); // element must be removed for ngRepeat to apply correctly
           }
-          drake.emit('drop-model', dropElm, target, source);
+          drake.emit('drop-model', dropElm, target, source, dropIndex);
         });
       });
       drake.registered = true;
