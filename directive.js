@@ -31,6 +31,14 @@ function register (angular) {
         dragulaService.add(dragulaScope, name, drake);
       }
 
+      scope.$on('$destroy', function() {
+        var containerIndex = drake.containers.indexOf(container);
+        if (containerIndex >= 0) {
+          drake.containers.splice(containerIndex, 1);
+          drake.models.splice(containerIndex, 1);
+        }
+      });
+
       scope.$watch('dragulaModel', function (newValue, oldValue) {
         if (!newValue) {
           return;
