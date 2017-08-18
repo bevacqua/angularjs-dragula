@@ -35,7 +35,10 @@ function register (angular) {
         var containerIndex = drake.containers.indexOf(container);
         if (containerIndex >= 0) {
           drake.containers.splice(containerIndex, 1);
-          drake.models.splice(containerIndex, 1);
+
+          if (drake.models) {
+            drake.models.splice(containerIndex, 1);
+          }
         }
       });
 
