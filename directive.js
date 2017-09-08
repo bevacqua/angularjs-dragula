@@ -31,6 +31,10 @@ function register (angular) {
         dragulaService.add(dragulaScope, name, drake);
       }
 
+      scope.$on('$destroy', function () {
+        dragulaService.remove(dragulaScope, name);
+      });
+
       scope.$watch('dragulaModel', function (newValue, oldValue) {
         if (!newValue) {
           return;

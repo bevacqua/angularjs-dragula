@@ -8,6 +8,7 @@ function register (angular) {
   return [function dragulaService () {
     return {
       add: add,
+      remove: remove,
       find: find,
       options: setOptions,
       destroy: destroy,
@@ -88,6 +89,14 @@ function register (angular) {
         handleModels(scope, drake);
       }
       return bag;
+    }
+    function remove(scope, name) {
+      var bags = getOrCreateCtx(scope).bags;
+      var bag = find(scope, name);
+      var index = bags.indexOf(bag);
+      if (index !== -1) {
+        bags.splice(index, 1);
+      }
     }
     function find (scope, name) {
       var bags = getOrCreateCtx(scope).bags;
