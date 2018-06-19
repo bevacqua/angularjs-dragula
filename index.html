@@ -255,12 +255,38 @@ app.controller('RepeatCtrl', ['$scope', 'dragulaService',
   <div class='parent' ng-controller='NestedRepeatCtrl'>
     <label for='hy'><strong>Angular-specific example.</strong> Fancy some nested <code>ng-repeat</code>?</label>
     <div class='wrapper'>
-      <div class='container' ng-repeat="group in groups" dragula="'nested-bag'" dragula-scope="$parent">
+      <div class='container' ng-repeat="group in groups" dragula="'nested-bag'" dragula-model="group.items" dragula-scope="$parent">
         <div ng-repeat='item in group.items' ng-bind='item.name'></div>
       </div>
     </div>
+	
+	<pre>
+      <code>
+&lt;div class='wrapper'&gt;
+  &lt;div class='container' ng-repeat=&quot;group in groups&quot; dragula=&quot;'nested-bag'&quot; dragula-model=&quot;group.items&quot; dragula-scope=&quot;$parent&quot;&gt;
+	&lt;div ng-repeat='item in group.items' ng-bind='item.name'&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+app.controller('NestedRepeatCtrl', ['$scope',
+  function ($scope) {
+    $scope.groups = [
+      {
+        name: 'Group A',
+        items: [{name: 'Item A'},{name: 'Item B'},{name: 'Item C'},{name: 'Item D'}]
+      },
+      {
+        name: 'Group B',
+        items: [{name: 'Item 1'},{name: 'Item 2'},{name: 'Item 3'},{name: 'Item 4'}]
+      }
+    ];
+  }
+])
+      </code>
+    </pre>
   </div>
 </div>
+
 <h3>Get it on GitHub! <a href='https://github.com/bevacqua/angularjs-dragula'>bevacqua/angularjs-dragula</a></h3>
 <script src='dist/angular.js'></script>
 <script src='dist/angularjs-dragula.js'></script>
